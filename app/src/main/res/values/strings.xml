@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ContactsBook</string>
+    <string name="firstfrag">FirstFrag</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Second fragment</string>
+    <string name="first_graph_blank_fragment">first graph fragment</string>
+    <string name="second_graph_blank_fragment">Second graph fragment</string>
+    <string name="first_activity">First activity</string>
 </resources>
