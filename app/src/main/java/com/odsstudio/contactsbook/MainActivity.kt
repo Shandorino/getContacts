@@ -55,7 +55,9 @@ class MainActivity : ComponentActivity() {
                 1
             )
         } else {
+
             permissionGranted.value = true
+
         }
 
         //Запуск сервиса и получение списка контактов
