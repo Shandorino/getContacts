@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/album_icon_background.xml" value="0.1875" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/anim_background.xml" value="0.1425" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/collage_background.xml" value="0.1425" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.1875" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/icon_background.xml" value="0.1" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/movie_background.xml" value="0.1425" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/phonobook_icon_background.xml" value="0.1875" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/activity_second.xml" value="0.1" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_first_graph.xml" value="0.3625" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_layout.xml" value="0.3625" />
