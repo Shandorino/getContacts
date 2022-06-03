@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/secondGraphNav2">
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.odsstudio.contactsbook.ui_fragments.contacts_fragments.ContactsFragment"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts">
+    </fragment>
+    <fragment
+        android:id="@+id/firstGraphFrag2"
+        android:name="com.odsstudio.contactsbook.ui_fragments.graphnavigation.FirstGraphFrag"
+        android:label="fragment_first_graph"
+        tools:layout="@layout/fragment_first_graph" />
+    <fragment
+        android:id="@+id/secondGraphNav2"
+        android:name="com.odsstudio.contactsbook.ui_fragments.graphnavigation.SecondGraphNav"
+        android:label="fragment_second_graph_nav"
+        tools:layout="@layout/fragment_second_graph_nav">
+        <action
+            android:id="@+id/navToContactFrag"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/navToFirstFragment"
+            app:destination="@id/firstGraphFrag2" />
+    </fragment>
+
+</navigation>
