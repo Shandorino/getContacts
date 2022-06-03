@@ -46,11 +46,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("start", "start")
 
         //Activity
-        val button = findViewById<Button>(R.id.navToSecondActivity)
-        button.setOnClickListener {
-            startActivity(Intent(this, SecondActivity::class.java)
-                .putExtra("myName", "Данные для второй активити"))
-        }
+
 
         //Fragment
 //        supportFragmentManager.beginTransaction()
