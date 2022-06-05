@@ -10,21 +10,29 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.odsstudio.contactsbook.R
+import com.odsstudio.contactsbook.data.Contact
 
 
-class SecondGraphNav : Fragment() {
+class SecondGraphNav() : Fragment() {
 
-    var button: Button? = null
-    var textView: TextView? = null
+    var button1: Button? = null
+    var button2: Button? = null
 
-    private val navigationListener = View.OnClickListener {
+    private val navigationToContactsListener = View.OnClickListener {
 
+            SecondGraphNavDirections.navToContactFrag().apply {
+                findNavController().navigate(this)
+            }
 
-
-//        SecondGraphNavDirections.navToFirstFragment().apply {
-//            findNavController().navigate(this)
-//        }
     }
+
+    private val navigationToVerstkaListener = View.OnClickListener {
+
+        SecondGraphNavDirections.navToFirstFragment().apply {
+            findNavController().navigate(this)
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,23 +40,22 @@ class SecondGraphNav : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_second_graph_nav, container, false)
 
-        button = view.findViewById(R.id.toFirstButton)
-        textView = view.findViewById(R.id.navGraphDataTextView)
+        button1 = view.findViewById(R.id.toContactsFragment)
+        button2 = view.findViewById(R.id.toVerstka)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        button?.setOnClickListener(navigationListener)
+        button1?.setOnClickListener(navigationToContactsListener)
+        button2?.setOnClickListener(navigationToVerstkaListener)
 
-        val args: SecondGraphNavArgs by navArgs()
-        textView?.text = args.navGraphData
         super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {
 
         @JvmStatic
-        fun newInstance() =
-            SecondGraphNav()
+        fun newInstance() = SecondGraphNav()
     }
+
 }
