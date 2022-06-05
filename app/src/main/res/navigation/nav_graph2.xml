@@ -27,6 +27,28 @@
         <action
             android:id="@+id/navToFirstFragment"
             app:destination="@id/firstGraphFrag2" />
+        <action
+            android:id="@+id/navToWorkerFragment"
+            app:destination="@id/firstNotificationFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/firstNotificationFragment"
+        android:name="com.odsstudio.contactsbook.ui_fragments.notification_fragments.FirstNotificationFragment"
+        android:label="fragment_first_notification"
+        tools:layout="@layout/fragment_first_notification" >
+        <action
+            android:id="@+id/to_secondNotificationFragment2"
+            app:destination="@id/secondNotificationFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondNotificationFragment2"
+        android:name="com.odsstudio.contactsbook.ui_fragments.notification_fragments.SecondNotificationFragment"
+        android:label="fragment_second_notification"
+        tools:layout="@layout/fragment_second_notification">
+        <argument
+            android:name="resultData"
+            app:argType="integer"
+            />
     </fragment>
 
 </navigation>

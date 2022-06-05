@@ -9,20 +9,30 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.odsstudio.contactsbook.R
 import com.odsstudio.contactsbook.data.Contact
+import com.odsstudio.contactsbook.databinding.FragmentSecondGraphNavBinding
 
 
-class SecondGraphNav() : Fragment() {
+class SecondGraphNav() : Fragment(R.layout.fragment_second_graph_nav) {
 
-    var button1: Button? = null
-    var button2: Button? = null
+    private val binding: FragmentSecondGraphNavBinding by viewBinding()
+
 
     private val navigationToContactsListener = View.OnClickListener {
 
             SecondGraphNavDirections.navToContactFrag().apply {
                 findNavController().navigate(this)
             }
+
+    }
+
+    private val navigationToWorkerListener = View.OnClickListener {
+
+        SecondGraphNavDirections.navToWorkerFragment().apply {
+            findNavController().navigate(this)
+        }
 
     }
 
@@ -34,20 +44,14 @@ class SecondGraphNav() : Fragment() {
     }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_second_graph_nav, container, false)
-
-        button1 = view.findViewById(R.id.toContactsFragment)
-        button2 = view.findViewById(R.id.toVerstka)
-        return view
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        button1?.setOnClickListener(navigationToContactsListener)
-        button2?.setOnClickListener(navigationToVerstkaListener)
+
+        with(binding) {
+            toWorker.setOnClickListener(navigationToWorkerListener)
+            toVerstka.setOnClickListener(navigationToVerstkaListener)
+            toContactsFragment.setOnClickListener(navigationToContactsListener)
+        }
+
 
         super.onViewCreated(view, savedInstanceState)
     }

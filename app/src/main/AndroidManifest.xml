@@ -4,8 +4,10 @@
     package="com.odsstudio.contactsbook" >
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
+        android:name=".ui_fragments.MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,6 +21,10 @@
          android:name=".services.MyService"
          android:enabled="true"
          android:exported="true" />
+        <service
+            android:name=".services.MyNotificationService"
+            android:enabled="true"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
