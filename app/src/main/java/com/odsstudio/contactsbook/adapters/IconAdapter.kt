@@ -2,10 +2,9 @@ package com.odsstudio.contactsbook.adapters
 
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.odsstudio.contactsbook.data.Icon
+import com.odsstudio.contactsbook.data.model.Icon
 import com.odsstudio.contactsbook.databinding.IconActiveLayoutBinding
 import com.odsstudio.contactsbook.databinding.IconDisableLayoutBinding
 

@@ -1,4 +1,4 @@
-package com.odsstudio.contactsbook.data
+package com.odsstudio.contactsbook.data.model
 
 import android.os.Parcel
 import android.os.Parcelable

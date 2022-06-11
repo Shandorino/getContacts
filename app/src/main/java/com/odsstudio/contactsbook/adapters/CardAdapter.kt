@@ -1,13 +1,10 @@
 package com.odsstudio.contactsbook.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.odsstudio.contactsbook.data.Card
-import com.odsstudio.contactsbook.data.Icon
+import com.odsstudio.contactsbook.data.model.Card
 import com.odsstudio.contactsbook.databinding.CardViewHolderBinding
-import com.odsstudio.contactsbook.databinding.IconActiveLayoutBinding
 
 class CardAdapter: RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
@@ -52,7 +49,7 @@ class CardAdapter: RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val item = items[position]
 
-        holder.onBind(card = item as Card)
+        holder.onBind(card = item)
     }
 
     override fun getItemCount(): Int = items.size

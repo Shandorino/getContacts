@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.odsstudio.contactsbook.R
 import com.odsstudio.contactsbook.adapters.ContactAdapter
 import com.odsstudio.contactsbook.contactArraList
-import com.odsstudio.contactsbook.data.Contact
 import com.odsstudio.contactsbook.databinding.FragmentContactsBinding
 
 

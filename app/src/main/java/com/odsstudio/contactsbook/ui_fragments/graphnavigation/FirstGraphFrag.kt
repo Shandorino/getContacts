@@ -2,23 +2,15 @@ package com.odsstudio.contactsbook.ui_fragments.graphnavigation
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.AdapterView
-import androidx.core.view.children
-import com.odsstudio.contactsbook.data.Icon
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
+import com.odsstudio.contactsbook.data.model.Icon
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.odsstudio.contactsbook.Const.ACTION_PAUSE_SERVICE
 import com.odsstudio.contactsbook.Const.ACTION_START_OR_RESUME_SERVICE
 import com.odsstudio.contactsbook.R
 import com.odsstudio.contactsbook.adapters.CardAdapter
 import com.odsstudio.contactsbook.adapters.IconAdapter
-import com.odsstudio.contactsbook.data.Card
+import com.odsstudio.contactsbook.data.model.Card
 import com.odsstudio.contactsbook.databinding.FragmentFirstGraphBinding
 import com.odsstudio.contactsbook.decorators.IconItemDecorator
 import com.odsstudio.contactsbook.services.MyNotificationService
@@ -28,8 +20,15 @@ class FirstGraphFrag : Fragment(R.layout.fragment_first_graph) {
 
     private val binding: FragmentFirstGraphBinding by viewBinding()
 
+
+
+
     private val iconAdapter: IconAdapter by lazy { IconAdapter() }
     private val cardAdapter: CardAdapter by lazy { CardAdapter() }
+
+
+
+
 
     private val cardForwClickListener = CardAdapter.CardForwardClickListener {
         sendActionToService(ACTION_START_OR_RESUME_SERVICE)

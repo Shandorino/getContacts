@@ -16,4 +16,5 @@ object Const {
     const val SERVICE_CHANNEL_ID = "service_id"
 
     const val WORKER_CHANNEL_ID = "worker_id"
+    const val DONWLOAD_WORKER_CHANNEL_ID = "download_worker_id"
 }

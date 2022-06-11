@@ -1,4 +1,4 @@
-package com.odsstudio.contactsbook.data
+package com.odsstudio.contactsbook.data.model
 
 import android.graphics.drawable.Drawable
 

@@ -5,13 +5,11 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
-import android.os.Parcel
-import android.os.Parcelable
 import android.provider.ContactsContract
 import android.text.TextUtils
 import android.util.Log
 import com.odsstudio.contactsbook.BROADCAST_ACTION
-import com.odsstudio.contactsbook.data.Contact
+import com.odsstudio.contactsbook.data.model.Contact
 
 class MyService : Service() {
 
