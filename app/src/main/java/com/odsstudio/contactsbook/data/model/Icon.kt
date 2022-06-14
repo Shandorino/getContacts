@@ -1,4 +1,4 @@
-package com.odsstudio.contactsbook.data
+package com.odsstudio.contactsbook.data.model
 
 sealed class Icon(
     open val id: Int,

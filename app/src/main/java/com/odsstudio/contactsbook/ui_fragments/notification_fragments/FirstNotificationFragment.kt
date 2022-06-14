@@ -1,19 +1,25 @@
 package com.odsstudio.contactsbook.ui_fragments.notification_fragments
 
 import android.os.Bundle
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.work.*
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.odsstudio.contactsbook.R
 import com.odsstudio.contactsbook.databinding.FragmentFirstNotificationBinding
+import com.odsstudio.contactsbook.view_model.MainViewModel
 import com.odsstudio.contactsbook.workers.MyFirstWorker
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
@@ -22,15 +28,29 @@ class FirstNotificationFragment : Fragment(R.layout.fragment_first_notification)
 
     private val binding: FragmentFirstNotificationBinding by viewBinding()
 
+    private val viewModel: MainViewModel by viewModels()
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
 
+            firstNumberField.addTextChangedListener(onTextChanged = {
+                text, _, _, _ ->
+                viewModel.dataChanget(text.toString())
+            })
+
             plusButton.setOnClickListener(plusButtonClickListener)
             minusButton.setOnClickListener(minusButtonClickListener)
             multiplyButton.setOnClickListener(multiplyButtonClickListener)
             divideButton.setOnClickListener(divideButtonClickListener)
+
+            lifecycleScope.launchWhenCreated {
+                viewModel.text_.collect {
+                    firstNumberTitle.text = it
+                }
+            }
 
         }
     }

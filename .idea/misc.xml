@@ -9,6 +9,7 @@
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/anim_background.xml" value="0.1425" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/collage_background.xml" value="0.1425" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.1875" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/ic_sd_card.xml" value="0.1935" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/icon_background.xml" value="0.1" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/movie_background.xml" value="0.1425" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/drawable/phonobook_icon_background.xml" value="0.1875" />
@@ -17,14 +18,19 @@
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/card_view_holder.xml" value="0.20481927710843373" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/contacts_layout.xml" value="0.16117216117216118" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_contacts.xml" value="0.1" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.2975630611372381" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_first_graph.xml" value="0.22" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_first_notification.xml" value="0.2975630611372381" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_layout.xml" value="0.3625" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_retrofit.xml" value="0.2975630611372381" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_room.xml" value="0.2975630611372381" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_second.xml" value="0.3625" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_second_graph_nav.xml" value="0.3625" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/fragment_second_notification.xml" value="0.2860196665241556" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/icon_active_layout.xml" value="0.2975630611372381" />
         <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/icon_disable_layout.xml" value="0.2975630611372381" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/note_view_holder.xml" value="0.75" />
+        <entry key="..\:/AAndroid/ContactsBook/app/src/main/res/layout/user_view_holder.xml" value="0.3625" />
       </map>
     </option>
   </component>

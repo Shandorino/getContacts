@@ -6,4 +6,6 @@
     <string name="first_graph_blank_fragment">first graph fragment</string>
     <string name="second_graph_blank_fragment">Second graph fragment</string>
     <string name="first_activity">First activity</string>
+    <string name="home">Home</string>
+    <string name="sd_card">SD Card</string>
 </resources>

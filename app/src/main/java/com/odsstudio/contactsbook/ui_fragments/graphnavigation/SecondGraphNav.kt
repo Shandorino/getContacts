@@ -2,17 +2,12 @@ package com.odsstudio.contactsbook.ui_fragments.graphnavigation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.odsstudio.contactsbook.R
-import com.odsstudio.contactsbook.data.Contact
 import com.odsstudio.contactsbook.databinding.FragmentSecondGraphNavBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
 class SecondGraphNav() : Fragment(R.layout.fragment_second_graph_nav) {
@@ -43,6 +38,13 @@ class SecondGraphNav() : Fragment(R.layout.fragment_second_graph_nav) {
         }
     }
 
+    private val navigationToRetrofitListener = View.OnClickListener {
+
+        SecondGraphNavDirections.navToFragmentRetrofit().apply {
+            findNavController().navigate(this)
+        }
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -50,6 +52,7 @@ class SecondGraphNav() : Fragment(R.layout.fragment_second_graph_nav) {
             toWorker.setOnClickListener(navigationToWorkerListener)
             toVerstka.setOnClickListener(navigationToVerstkaListener)
             toContactsFragment.setOnClickListener(navigationToContactsListener)
+            toRetrofit.setOnClickListener(navigationToRetrofitListener)
         }
 
 

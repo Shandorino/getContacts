@@ -6,27 +6,19 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.mutableStateOf
 import androidx.core.app.ActivityCompat
-import androidx.lifecycle.withCreated
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.odsstudio.contactsbook.data.Contact
+import com.odsstudio.contactsbook.data.model.Contact
 import com.odsstudio.contactsbook.services.MyService
-import com.odsstudio.contactsbook.ui_fragments.contacts_fragments.ContactsFragment
-import com.odsstudio.contactsbook.ui_fragments.graphnavigation.SecondGraphNav
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
 
 val BROADCAST_ACTION = "com.odsstudio.broadcastreceve"
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
 
@@ -67,19 +59,19 @@ class MainActivity : AppCompatActivity() {
 
             startService(intent)
 
-            val br = object : BroadcastReceiver() {
-                 // действия при получении сообщений
-                 override fun onReceive(context: Context?, intent: Intent) {
-                     contactss.value = intent.getParcelableArrayListExtra<Contact>("contacts") as ArrayList<Contact>
-
-                     contactArraList = contactss.value
-
-                    }
-                }
+//            val br = object : BroadcastReceiver() {
+//                 // действия при получении сообщений
+//                 override fun onReceive(context: Context?, intent: Intent) {
+//                     contactss.value = intent.getParcelableArrayListExtra<Contact>("contacts") as ArrayList<Contact>
+//
+//                     contactArraList = contactss.value
+//
+//                    }
+//                }
 
             val intentFilter = IntentFilter(BROADCAST_ACTION)
 
-           registerReceiver(br, intentFilter)
+           //registerReceiver(br, intentFilter)
 
         setContentView(R.layout.activity_main)
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment

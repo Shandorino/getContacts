@@ -1,16 +1,11 @@
 package com.odsstudio.contactsbook.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.odsstudio.contactsbook.R
-import com.odsstudio.contactsbook.data.Contact
+import com.odsstudio.contactsbook.data.model.Contact
 import com.odsstudio.contactsbook.databinding.ContactsLayoutBinding
-import com.odsstudio.contactsbook.databinding.FragmentContactsBinding
 
 class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
@@ -56,7 +51,7 @@ class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val item = items[position]
 
-        holder.onBind(contact = item as Contact)
+        holder.onBind(contact = item)
 
 
     }

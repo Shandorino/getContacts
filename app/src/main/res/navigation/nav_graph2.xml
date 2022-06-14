@@ -30,6 +30,12 @@
         <action
             android:id="@+id/navToWorkerFragment"
             app:destination="@id/firstNotificationFragment"/>
+        <action
+            android:id="@+id/navToFragmentRetrofit"
+            app:destination="@id/fragmentRetrofit" />
+        <action
+            android:id="@+id/navToFragmentRoom"
+            app:destination="@id/fragmentRoom" />
     </fragment>
     <fragment
         android:id="@+id/firstNotificationFragment"
@@ -50,5 +56,24 @@
             app:argType="integer"
             />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentRetrofit"
+        android:name="com.odsstudio.contactsbook.ui_fragments.retrofin_fragments.FragmentRetrofit"
+        android:label="fragment_retrofit"
+        tools:layout="@layout/fragment_retrofit" >
+        <action
+            android:id="@+id/navToFragmentCustomDialog"
+            app:destination="@id/fragmentCustomDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/fragmentCustomDialog"
+        android:name="com.odsstudio.contactsbook.ui_fragments.retrofin_fragments.FragmentCustomDialog"
+        android:label="fragment_custom_dialog"
+        tools:layout="@layout/fragment_custom_dialog" />
+    <fragment
+        android:id="@+id/fragmentRoom"
+        android:name="com.odsstudio.contactsbook.ui_fragments.room_fragment.FragmentRoom"
+        android:label="fragment_room"
+        tools:layout="@layout/fragment_room" />
 
 </navigation>

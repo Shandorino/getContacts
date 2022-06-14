@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
         android:id="@+id/toContactsFragment"
         android:text="Контакты"
         />
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/toVerstka"
-        android:layout_marginTop="100sp"
+        android:layout_marginBottom="50dp"
         android:text="Верстка"
         />
 
@@ -30,8 +31,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/toWorker"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="0dp"
         android:text="Воркер"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/toRetrofit"
+        android:layout_marginTop="50dp"
+        android:text="Retrofit"
         />
 
 
