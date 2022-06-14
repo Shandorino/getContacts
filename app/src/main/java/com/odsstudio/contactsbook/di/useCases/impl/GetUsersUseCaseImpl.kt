@@ -2,16 +2,16 @@ package com.odsstudio.contactsbook.di.useCases.impl
 
 import com.odsstudio.contactsbook.data.model.User
 import com.odsstudio.contactsbook.di.repositories.ApiRepository
-import com.odsstudio.contactsbook.di.useCases.GetUserUseCase
+import com.odsstudio.contactsbook.di.useCases.GetUsersUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class GetUserUseCaseImpl @Inject constructor(
+class GetUsersUseCaseImpl @Inject constructor(
     private val apiRepository: ApiRepository
-): GetUserUseCase {
+): GetUsersUseCase {
 
-    override fun invoke(token: String): Flow<User> = apiRepository.getUser(token).flowOn(Dispatchers.IO)
+    override fun invoke(): Flow<List<User>> = apiRepository.getUsers().flowOn(Dispatchers.IO)
 
 }

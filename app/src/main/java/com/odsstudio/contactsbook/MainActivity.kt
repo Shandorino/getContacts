@@ -59,19 +59,19 @@ class MainActivity : AppCompatActivity() {
 
             startService(intent)
 
-            val br = object : BroadcastReceiver() {
-                 // действия при получении сообщений
-                 override fun onReceive(context: Context?, intent: Intent) {
-                     contactss.value = intent.getParcelableArrayListExtra<Contact>("contacts") as ArrayList<Contact>
-
-                     contactArraList = contactss.value
-
-                    }
-                }
+//            val br = object : BroadcastReceiver() {
+//                 // действия при получении сообщений
+//                 override fun onReceive(context: Context?, intent: Intent) {
+//                     contactss.value = intent.getParcelableArrayListExtra<Contact>("contacts") as ArrayList<Contact>
+//
+//                     contactArraList = contactss.value
+//
+//                    }
+//                }
 
             val intentFilter = IntentFilter(BROADCAST_ACTION)
 
-           registerReceiver(br, intentFilter)
+           //registerReceiver(br, intentFilter)
 
         setContentView(R.layout.activity_main)
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment

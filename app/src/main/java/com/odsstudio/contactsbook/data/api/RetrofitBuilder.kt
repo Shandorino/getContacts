@@ -21,6 +21,6 @@ class RetrofitBuilder {
 
 
     companion object {
-        private const val BASE_URL = "https://62a22a44cc8c0118ef5e20f7.mockapi.io/"
+        private const val BASE_URL = "https://top1bot.ru/wsr-food/"
     }
 }

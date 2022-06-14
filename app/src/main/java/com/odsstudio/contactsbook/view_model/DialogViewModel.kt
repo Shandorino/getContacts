@@ -1,19 +1,12 @@
 package com.odsstudio.contactsbook.view_model
 
+import android.content.ContentResolver
+import android.database.Cursor
 import android.net.Uri
+import android.provider.MediaStore.MediaColumns
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.odsstudio.contactsbook.data.model.UserApi
-import com.odsstudio.contactsbook.di.useCases.PostUserUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.launch
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
-import java.io.File
-import java.net.URI
-import javax.inject.Inject
 
 
 //@HiltViewModel
@@ -24,5 +17,21 @@ class DialogViewModel : ViewModel() {
         Log.e("Exception", throwable.toString())
 
     }
+
+    fun getFilePathFromContentUri(
+        selectedVideoUri: Uri,
+        contentResolver: ContentResolver
+    ): String? {
+        val filePath: String
+        val filePathColumn = arrayOf(MediaColumns.DATA)
+        val cursor: Cursor? =
+            contentResolver.query(selectedVideoUri, filePathColumn, null, null, null)
+        cursor?.moveToFirst()
+        val columnIndex: Int = cursor!!.getColumnIndex(filePathColumn[0])
+        filePath = cursor.getString(columnIndex)
+        cursor.close()
+        return filePath
+    }
+
 
 }

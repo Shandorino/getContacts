@@ -49,8 +49,6 @@ class FragmentCustomDialog : DialogFragment(R.layout.fragment_custom_dialog) {
 
     private fun postButtonListener() = View.OnClickListener {
         with(binding){
-//           val user = User(name = , lastName = userLastNameEditText.text.toString(), image = "", id = null)
-////            viewModel.postUser(user.toUserApi())
             sendUriToWorker(userNameEditText.text.toString(), userLastNameEditText.text.toString())
         }
 
@@ -85,9 +83,12 @@ class FragmentCustomDialog : DialogFragment(R.layout.fragment_custom_dialog) {
         with(binding) {
             addImageButton.setOnClickListener(getImageFormActivity())
             imageUri.observe(viewLifecycleOwner) { uri ->
-                val asd = File(uri.path).name
-                srcImageTextView.text = asd
+                val uriPath = uri.path
 
+                if (uriPath != null) {
+                    val asd = File(uriPath).name
+                    srcImageTextView.text = asd
+                }
             }
             postButton.setOnClickListener(postButtonListener())
         }
@@ -105,8 +106,9 @@ class FragmentCustomDialog : DialogFragment(R.layout.fragment_custom_dialog) {
         }
 
         fun selectImage() {
-            getContent.launch("image/*")
+            getContent.launch("image/png")
         }
+
     }
 
     companion object {

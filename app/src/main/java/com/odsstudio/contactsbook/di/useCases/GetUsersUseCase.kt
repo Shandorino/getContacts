@@ -1,11 +1,10 @@
 package com.odsstudio.contactsbook.di.useCases
 
 import com.odsstudio.contactsbook.data.model.User
-import com.odsstudio.contactsbook.data.model.UserApi
 import kotlinx.coroutines.flow.Flow
 
-interface GetUserUseCase {
+interface GetUsersUseCase {
 
-    operator fun invoke(token: String): Flow<User>
+    operator fun invoke(): Flow<List<User>>
 
 }

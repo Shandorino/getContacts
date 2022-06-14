@@ -1,21 +1,22 @@
 package com.odsstudio.contactsbook.data.model
 
+
 import com.google.gson.annotations.SerializedName
 
 data class UserApi(
-    @SerializedName("name")
-    val name: String,
-    @SerializedName("lastname")
-    val lastName: String,
-    @SerializedName("image")
-    var image: String,
     @SerializedName("id")
-    val id: String?
+    val id: Int?,
+    @SerializedName("fullName")
+    val fullName: String,
+    @SerializedName("email")
+    val email: String,
+    @SerializedName("avatar")
+    var avatar: String
 ) {
     fun toUser() = User(
-        name = name,
-        lastName = lastName,
-        image = image,
+        fullName = fullName,
+        email = email,
+        avatar = avatar,
         id = id?.toInt()
     )
 }

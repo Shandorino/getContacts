@@ -5,17 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.odsstudio.contactsbook.data.model.User
 import com.odsstudio.contactsbook.di.useCases.GetUserUseCase
+import com.odsstudio.contactsbook.di.useCases.GetUsersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class RetrofitViewModel @Inject constructor(
-    private val getUserUseCase: GetUserUseCase
+    private val getUserUseCase: GetUserUseCase,
+    private val getUsersUseCase: GetUsersUseCase
 )
 : ViewModel() {
 
@@ -31,9 +31,10 @@ class RetrofitViewModel @Inject constructor(
 
     fun getUser() {
         viewModelScope.launch(exceptionHandler) {
-            getUserUseCase.invoke().collect {
+            getUsersUseCase.invoke().collect {
                 _user.emit(it)
             }
+
         }
     }
 

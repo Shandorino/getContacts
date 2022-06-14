@@ -1,15 +1,16 @@
 package com.odsstudio.contactsbook.data.model
 
 data class User(
+
     val id: Int?,
-    val name: String,
-    var image: String,
-    val lastName: String
+    val fullName: String,
+    val email: String,
+    var avatar: String,
 ) {
     fun toUserApi() = UserApi(
-        name = name,
-        lastName = lastName,
-        image = image,
-        id = id.toString()
+        fullName = fullName,
+        email = email,
+        avatar = avatar,
+        id = id?.toInt()
     )
 }

@@ -20,10 +20,10 @@ class UserCardAdapter: RecyclerView.Adapter<UserCardAdapter.UserCardViewHolder>(
 
         fun onBind(user: User) {
             with(binding) {
-                firstName.text = user.name
-                lastName.text = user.lastName
+                firstName.text = user.fullName
+                lastName.text = user.email
 
-                Glide.with(binding.root).load(user.image).centerCrop().into(mainImage)
+                Glide.with(binding.root).load("https://top1bot.ru/wsr-food/photos/${user.avatar}").centerCrop().into(mainImage)
             }
         }
 

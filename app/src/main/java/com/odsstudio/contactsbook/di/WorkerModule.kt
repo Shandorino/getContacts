@@ -1,9 +1,9 @@
 package com.odsstudio.contactsbook.di
 
-import com.odsstudio.contactsbook.di.useCases.PostUserImageUseCase
-import com.odsstudio.contactsbook.di.useCases.PostUserUseCase
-import com.odsstudio.contactsbook.di.useCases.impl.PostUserImageUseCaseImpl
-import com.odsstudio.contactsbook.di.useCases.impl.PostUserUseCaseImpl
+import com.odsstudio.contactsbook.di.useCases.PostAddUserUseCase
+import com.odsstudio.contactsbook.di.useCases.PostLoginUserUseCase
+import com.odsstudio.contactsbook.di.useCases.impl.PostAddUserUseCaseImpl
+import com.odsstudio.contactsbook.di.useCases.impl.PostLoginUSerUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,11 +12,18 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class WorkerModule {
+interface WorkerModule {
+
+//    @Binds
+//    abstract fun bindsPostUserUseCase(postUserUseCaseImpl: PostUserUseCaseImpl): PostUserUseCase
+//
+//    @Binds
+//    abstract fun bindsPostUserImageUseCase(postUserImageUseCaseImpl: PostUserImageUseCaseImpl): PostUserImageUseCase
 
     @Binds
-    abstract fun bindsPostUserUseCase(postUserUseCaseImpl: PostUserUseCaseImpl): PostUserUseCase
+    fun bindsPostAddUserUseCase(postAddUserUseCaseImpl: PostAddUserUseCaseImpl): PostAddUserUseCase
 
     @Binds
-    abstract fun bindsPostUserImageUseCase(postUserImageUseCaseImpl: PostUserImageUseCaseImpl): PostUserImageUseCase
+    fun bindsPostLoginUserUseCase(postLoginUserUseCaseImpl: PostLoginUSerUseCaseImpl): PostLoginUserUseCase
+
 }
